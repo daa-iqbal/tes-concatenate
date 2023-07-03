@@ -122,7 +122,9 @@ return [
     'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
-
+    'rajaongkir_key' => env('RAJAONGKIR_KEY', null),
+    'rajaongkir_url' => env('RAJAONGKIR_URL', null),
+    
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

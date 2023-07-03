@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLogEmailNotifications extends Migration
+class CreateMasterCityTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateLogEmailNotifications extends Migration
      */
     public function up()
     {
-        Schema::create('log_email_notifications', function (Blueprint $table) {
+        Schema::create('master_city', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->mediumText('data')->nullable();
-            $table->string('receiver_email', 255)->nullable();
-            $table->string('sender_email', 255)->nullable();
-            $table->mediumText('subject')->nullable();
+            $table->bigInteger('provinsi_id')->nullable();
+            $table->string('name', 255)->nullable();
+            $table->string('type', 255)->nullable();
+            $table->string('postal_code', 255)->nullable();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
-            
+            $table->dateTime('deleted_at')->nullable(); 
         });
     }
 
@@ -32,6 +32,6 @@ class CreateLogEmailNotifications extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('log_email_notifications');
+        Schema::dropIfExists('master_city');
     }
 }

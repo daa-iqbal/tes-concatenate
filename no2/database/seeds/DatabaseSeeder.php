@@ -11,12 +11,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
-        $this->call(BasicAuthenticationsSeeder::class);
-        $this->call(RoleSeeder::class);
-        $this->call(FileTypesSeeder::class);
-        $this->call(ConfirmationTypeSeeder::class);
-
-        // $this->call(UsersTableSeeder::class);
+        $this->call(ProvinceSeeder::class);
+        $this->call(CitySeeder::class);
+        $this->call(CourierSeeder::class);
+        $this->call(OngkirSeeder::class);
     }
 }

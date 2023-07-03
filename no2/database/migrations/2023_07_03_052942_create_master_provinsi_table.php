@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFextsTable extends Migration
+class CreateMasterProvinsiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class CreateFextsTable extends Migration
      */
     public function up()
     {
-        Schema::create('fexts', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name')->unique();
-            $table->unsignedBigInteger('ftype_id');
-            $table->timestamps();
+        Schema::create('master_provinsi', function (Blueprint $table) {
             
-            $table->foreign('ftype_id')->references('id')->on('ftypes')->onUpdate('cascade')->onDelete('cascade');
+            $table->bigIncrements('id');
+            $table->string('name', 255)->nullable();
+            $table->dateTime('created_at')->nullable();
+            $table->dateTime('updated_at')->nullable();
+            $table->dateTime('deleted_at')->nullable();
+            
+    
         });
     }
 
@@ -30,6 +32,6 @@ class CreateFextsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fexts');
+        Schema::dropIfExists('master_provinsi');
     }
 }

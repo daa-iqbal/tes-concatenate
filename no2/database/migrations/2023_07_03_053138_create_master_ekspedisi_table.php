@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableNotifikasiBroadcast extends Migration
+class CreateMasterEkspedisiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateTableNotifikasiBroadcast extends Migration
      */
     public function up()
     {
-        Schema::create('notifikasi_broadcast', function (Blueprint $table) {
+        Schema::create('master_ekspedisi', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('pengirim_id')->nullable();
-            $table->text('penerima_id')->nullable();
-            $table->string('judul')->nullable();
-            $table->string('pesan')->nullable();
-            $table->text('data_json')->nullable();
-            $table->text('penerima_roles')->nullable();
+            $table->string('kode', 255)->nullable();
+            $table->string('name', 255)->nullable();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
             $table->dateTime('deleted_at')->nullable();
@@ -34,6 +30,6 @@ class CreateTableNotifikasiBroadcast extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notifikasi_broadcast');
+        Schema::dropIfExists('master_ekspedisi');
     }
 }
