@@ -22,7 +22,7 @@
 - php artisan key:generate
 - setup settingan koneksi database di .env dengan variabel sebagai berikut (DB_CONNECTION,DB_HOST,DB_PORT,DB_USERNAME,
   DB_PASSWORD,DB_DATABASE).
-- setup settingan rajaongkir di .env dengan variabel sebagai beriku (RAJAONGKIR_KEY, RAJAONGKIR_URL).
+- setup settingan rajaongkir di .env dengan variabel sebagai berikut (RAJAONGKIR_KEY, RAJAONGKIR_URL).
 - php artisan migrate
 - php artisan db:seed
 - data master provinsi akan tersimpan di tabel master_provinsi
